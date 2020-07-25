@@ -20,6 +20,8 @@ npm run dev
 
 ## Docker version
 
+### Containerized development environment
+
 Podemos montar una version de la web en un docker para tests.  
 Para ello usaremos una imagen node:alpine.  
 Pasos:  
@@ -51,3 +53,11 @@ Pasos:
 * Edita los archivos en **coffeewip-website** que los cambios se deberian ver en la URL de arriba :smiley:
 
 
+### Container image for deployment
+
+Build image locally and run it
+```
+docker build . -t coffewip-website
+docker run -p 3000:3000 coffewip-website
+# Browse http://127.0.0.1:3000
+```
