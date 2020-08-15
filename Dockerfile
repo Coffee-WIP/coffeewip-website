@@ -1,4 +1,7 @@
-FROM bitnami/node:12.18.3
+FROM alpine:3.12.0
+RUN apk add --update \
+    nodejs>12.17.0-r0 \
+    npm>12.17.0-r0
 
 WORKDIR /app
 COPY package*.json ./
