@@ -1,7 +1,7 @@
 import { AppProps } from "next/app";
 import Head from "next/head";
 import Container from "next/head";
-import "../styles.css";
+import "../ui-kit/styles.css";
 
 function App({ Component, pageProps }: AppProps): JSX.Element {
   return (
