@@ -1,10 +1,18 @@
+<img src="./assets/banner-coffeewip.jpg">
+
 # CoffeeWIP Website
 
-La página web esta desarrollada en NextJS y el gestor de paquetes utilizados es NPM.
+## 🔖 Description
+
+La página web esta desarrollada en ReactJS y NextJS y el gestor de paquetes utilizados es NPM.
 
 Para la definición de componentes, servicios, etc., se emplea functional programming evitando la creación de clases.
 
-## Getting Started
+## 📐 How to work with this project
+
+Debes de seguir los siguientes pasos para poder trabajar en local.
+
+### 1️⃣ Install NodeJS Dependencies
 
 En primer lugar es necesario instalar las dependencias del proyecto.
 
@@ -12,42 +20,52 @@ En primer lugar es necesario instalar las dependencias del proyecto.
 npm install
 ```
 
+### 2️⃣ Run HTTP Server with or whithout Cluster
+
 Y después lanzar el servidor local, que por defecto será accesible desde la url: [http://localhost:3000](http://localhost:3000). Para ello es necesario lanzar el siguiente commando:
 
 ```bash
 npm run dev
 ```
 
-## Docker version
+## 🐋 Docker version
 
-Podemos montar una version de la web en un docker para tests.  
-Para ello usaremos una imagen node:alpine.  
-Pasos:  
-* Instala **docker** en tu maquina. Esto se ha probado en un MacBook Pro corriendo macOS Catalina :wink: 
-* Crea un directorio de proyecto (aqui se llama **coffee-mac**) y clona este repositorio 
+Build image locally and run it
+```
+docker build . -t coffewip-website
+docker run -p 3000:3000 coffewip-website
+# Browse http://127.0.0.1:3000
+```
+
+## 📂 Code Scaffolding
+
+```any
+/
+├── assets 🌈                   # Images Sources.
+├── components                  # Components.
+├── env                         # Environments.
+├── pages                       # Static pages.
+├── public                      # Root files.
+├── src                         # Server Application.
+├── ui-kit                      # Style kit.
+└── ...
+```
+
+## ⛽️ Review and Update Dependences
+
+For review and update all npm dependences of this project you need install in global npm package "npm-check-updates" npm module.
 
 ```bash
- ~/Dockers/coffee-mac $ > git clone https://github.com/Coffee-WIP/coffeewip-website.git 
+# Install and Run
+$npm i -g npm-check-updates
+$ncu
 ```
-* El contenido de la web esta en **coffeewip-website**. Lanzamos el docker de manera que vea ese directorio
 
-```bash
- ~/Dockers/coffee-mac $ > docker run --name coffee --hostname=coffee \
--d -p 3300:3000 \
--v `pwd`/coffeewip-website/:/usr/app \
--t node:alpine
-```
-* El docker se llama coffee :grin:. Vamos dentro de **coffee** y lanzamos la web
+## Happy Code
 
-```bash
-~/Dockers/coffee-mac $ > docker exec -it coffee /bin/sh
-/ # 
-/ # cd /usr/app/
-/usr/app # npm install
-/usr/app # yarn add --dev typescript @types/node
-/usr/app # npm run dev
-```
-* Cuando todo haya acabado de compilar, apunta el explorador a la URL http://0.0.0.0:3300/. 
-* Edita los archivos en **coffeewip-website** que los cambios se deberian ver en la URL de arriba :smiley:
+Created with JavaScript, lot of ❤️ and a few ☕️
 
+## This README.md file has been written keeping in mind
 
+[GitHub Markdown](https://guides.github.com/features/mastering-markdown/) \
+[Emoji Cheat Sheet](https://www.webfx.com/tools/emoji-cheat-sheet/)
